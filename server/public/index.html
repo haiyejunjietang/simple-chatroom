@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易微信聊天室</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loginScreen">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="fa fa-wechat login-icon"></i>
+                <h1 class="login-title">微信聊天室</h1>
+            </div>
+
+            <div class="form-group">
+                <label for="username" class="form-label">请输入昵称</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="text" id="username" class="form-input" placeholder="您的昵称" required>
+                </div>
+            </div>
+
+            <button id="loginBtn" class="btn">
+                <i class="fa fa-sign-in btn-icon"></i> 进入聊天室
+            </button>
+        </div>
+    </div>
+
+    <div id="chatScreen">
+        <header class="chat-header">
+            <div class="header-left">
+                <i class="fa fa-wechat header-icon"></i>
+                <h1 class="header-title">微信聊天室</h1>
+            </div>
+            <div class="header-right">
+                <span id="onlineCount" class="online-count">
+                    <i class="fa fa-users"></i> 0人在线
+                </span>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fa fa-sign-out"></i>
+                </button>
+            </div>
+        </header>
+        <main class="chat-main">
+            <div class="user-list-container">
+                <h2 class="user-list-title">
+                    <i class="fa fa-user-circle user-list-icon"></i> 在线用户
+                </h2>
+                <ul id="userList" class="user-list">
+                </ul>
+            </div>
+            <div class="messages-container">
+                <div id="messages" class="messages">
+                </div>
+                <div class="input-area">
+                    <form id="messageForm" class="message-form">
+                        <textarea id="messageInput" class="message-input" placeholder="输入消息..." rows="1"></textarea>
+                        <button type="submit" class="send-btn">
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
